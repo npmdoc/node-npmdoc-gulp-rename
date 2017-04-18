@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/hparra/gulp-rename"
-
-    >gulp-rename (v1.2.2)</a>
+    <a href="https://github.com/hparra/gulp-rename">gulp-rename (v1.2.2)</a>
 </h1>
 <h4>Rename files</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rename">module gulp-rename</a><ol>
 
@@ -105,28 +98,28 @@
 
     var type = typeof obj;
 
-    if (type === &#x27;string&#x27; &#x26;&#x26; obj !== &#x27;&#x27;) {
+    if (type === 'string' &amp;&amp; obj !== '') {
 
       path = obj;
 
-    } else if (type === &#x27;function&#x27;) {
+    } else if (type === 'function') {
 
       obj(parsedPath);
       path = Path.join(parsedPath.dirname, parsedPath.basename + parsedPath.extname);
 
-    } else if (type === &#x27;object&#x27; &#x26;&#x26; obj !== undefined &#x26;&#x26; obj !== null) {
+    } else if (type === 'object' &amp;&amp; obj !== undefined &amp;&amp; obj !== null) {
 
-      var dirname = &#x27;dirname&#x27; in obj ? obj.dirname : parsedPath.dirname,
-        prefix = obj.prefix || &#x27;&#x27;,
-        suffix = obj.suffix || &#x27;&#x27;,
-        basename = &#x27;basename&#x27; in obj ? obj.basename : parsedPath.basename,
-        extname = &#x27;extname&#x27; in obj ? obj.extname : parsedPath.extname;
+      var dirname = 'dirname' in obj ? obj.dirname : parsedPath.dirname,
+        prefix = obj.prefix || '',
+        suffix = obj.suffix || '',
+        basename = 'basename' in obj ? obj.basename : parsedPath.basename,
+        extname = 'extname' in obj ? obj.extname : parsedPath.extname;
 
       path = Path.join(dirname, prefix + basename + suffix + extname);
 
     } else {
 
-      callback(new Error(&#x27;Unsupported renaming parameter type supplied&#x27;), undefined);
+      callback(new Error('Unsupported renaming parameter type supplied'), undefined);
       return;
 
     }
@@ -155,3 +148,4 @@
     ]
 </div>
 </div>
+</body></html>

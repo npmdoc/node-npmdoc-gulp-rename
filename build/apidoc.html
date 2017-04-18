@@ -61,12 +61,91 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rename">module gulp-rename</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rename.gulp-rename">
+            function <span class="apidocSignatureSpan"></span>gulp-rename
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-rename" id="apidoc.module.gulp-rename">module gulp-rename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rename.gulp-rename" id="apidoc.element.gulp-rename.gulp-rename">
+        function <span class="apidocSignatureSpan"></span>gulp-rename
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function gulpRename(obj) {
+
+  var stream = new Stream.Transform({objectMode: true});
+
+  function parsePath(path) {
+    var extname = Path.extname(path);
+    return {
+      dirname: Path.dirname(path),
+      basename: Path.basename(path, extname),
+      extname: extname
+    };
+  }
+
+  stream._transform = function(file, unused, callback) {
+
+    var parsedPath = parsePath(file.relative);
+    var path;
+
+    var type = typeof obj;
+
+    if (type === &#x27;string&#x27; &#x26;&#x26; obj !== &#x27;&#x27;) {
+
+      path = obj;
+
+    } else if (type === &#x27;function&#x27;) {
+
+      obj(parsedPath);
+      path = Path.join(parsedPath.dirname, parsedPath.basename + parsedPath.extname);
+
+    } else if (type === &#x27;object&#x27; &#x26;&#x26; obj !== undefined &#x26;&#x26; obj !== null) {
+
+      var dirname = &#x27;dirname&#x27; in obj ? obj.dirname : parsedPath.dirname,
+        prefix = obj.prefix || &#x27;&#x27;,
+        suffix = obj.suffix || &#x27;&#x27;,
+        basename = &#x27;basename&#x27; in obj ? obj.basename : parsedPath.basename,
+        extname = &#x27;extname&#x27; in obj ? obj.extname : parsedPath.extname;
+
+      path = Path.join(dirname, prefix + basename + suffix + extname);
+
+    } else {
+
+      callback(new Error(&#x27;Unsupported renaming parameter type supplied&#x27;), undefined);
+      return;
+
+    }
+
+    file.path = Path.join(file.base, path);
+
+    // Rename sourcemap if present
+    if (file.sourceMap) {
+      file.sourceMap.file = file.relative;
+    }
+
+    callback(null, file);
+  };
+
+  return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
