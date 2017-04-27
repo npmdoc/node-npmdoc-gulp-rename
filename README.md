@@ -1,6 +1,6 @@
 # npmdoc-gulp-rename
 
-#### api documentation for  [gulp-rename (v1.2.2)](https://github.com/hparra/gulp-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-rename)
+#### basic api documentation for  [gulp-rename (v1.2.2)](https://github.com/hparra/gulp-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-rename)
 
 #### Rename files
 
@@ -86,7 +86,8 @@
         "pretest": "jshint index.js test/",
         "test": "mocha"
     },
-    "version": "1.2.2"
+    "version": "1.2.2",
+    "bin": {}
 }
 ```
 

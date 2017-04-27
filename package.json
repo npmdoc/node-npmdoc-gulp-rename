@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "#### api documentation for  [gulp-rename (v1.2.2)](https://github.com/hparra/gulp-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-rename)",
+    "description": "#### basic api documentation for  [gulp-rename (v1.2.2)](https://github.com/hparra/gulp-rename)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-rename.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-rename) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-rename.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-rename)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "gulp-rename": "*",
@@ -35,5 +35,5 @@
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.6"
+    "version": "2017.4.27"
 }
